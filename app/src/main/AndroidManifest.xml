@@ -13,6 +13,72 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".WeightSumInfo"
+            android:exported="false" />
+        <activity
+            android:name=".FontFamilyInfo"
+            android:exported="false" />
+        <activity
+            android:name=".ZoomControllInfo"
+            android:exported="false" />
+        <activity
+            android:name=".VideoViewInfo"
+            android:exported="false" />
+        <activity
+            android:name=".CustomToastInfo"
+            android:exported="false" />
+        <activity
+            android:name=".ToastInfo"
+            android:exported="false" />
+        <activity
+            android:name=".AlertDialogInfo"
+            android:exported="false" />
+        <activity
+            android:name=".AndroidClockInfo"
+            android:exported="false" />
+        <activity
+            android:name=".TimePickerDialog"
+            android:exported="false" />
+        <activity
+            android:name=".TimePickerInfo"
+            android:exported="false" />
+        <activity
+            android:name=".DatePickerDialog"
+            android:exported="false" />
+        <activity
+            android:name=".DatePickerInfo"
+            android:exported="false" />
+        <activity
+            android:name=".WebViewInfo"
+            android:exported="false" />
+        <activity
+            android:name=".SwitchViewInfo"
+            android:exported="false" />
+        <activity
+            android:name=".SeekBarInfo"
+            android:exported="false" />
+        <activity
+            android:name=".RatingBarInfo"
+            android:exported="false" />
+        <activity
+            android:name=".RadioButtonInfo"
+            android:exported="false" />
+        <activity
+            android:name=".CheckBoxView"
+            android:exported="false" />
+        <activity
+            android:name=".ImageView"
+            android:exported="false" />
+        <activity
+            android:name=".EditTextView"
+            android:exported="false" />
+        <activity
+            android:name=".image_button_view"
+            android:exported="false" />
+        <activity
+            android:name=".buttonview"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
