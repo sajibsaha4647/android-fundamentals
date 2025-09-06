@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,22 @@ public class SwitchViewInfo extends AppCompatActivity {
             return insets;
         });
        setupActionBar();
+        setSwitchButton();
+    }
+
+    private  void setSwitchButton(){
+        binding.mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // Switch is ON
+                    Toast.makeText(SwitchViewInfo.this, "Switch is ON", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Switch is OFF
+                    Toast.makeText(SwitchViewInfo.this, "Switch is OFF", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
      private void setupActionBar() {
