@@ -1,6 +1,9 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.RatingBar;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +29,23 @@ public class RatingBarInfo extends AppCompatActivity {
             return insets;
         });
         setupActionBar();
+        submitRatingBar();
     }
+
+    private void submitRatingBar(){
+       binding.SubmitRatingId.setOnClickListener(e->{
+           binding.ratingBar.setOnRatingBarChangeListener((ratingBar1, rating, fromUser)->{
+               Log.d("TAG", "ratingBar1: " + ratingBar1);
+               Log.d("TAG", "rating: " + rating);
+               Log.d("TAG", "fromUser: " + fromUser);
+               if (fromUser) {
+                   Toast.makeText(this, "Rating: " + rating, Toast.LENGTH_SHORT).show();
+               }
+           });
+       });
+    }
+
+
 
      private void setupActionBar() {
         // Get the action bar
