@@ -116,6 +116,47 @@
                android:background="@color/black"
                android:padding="10dp"
                android:layout_marginBottom="10dp"
+               android:layout_marginTop="20dp"
+               android:id="@+id/RelativeLayId"
+               >
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:text="ReltiveLayout"
+                   android:textColor="@color/white"
+                   />
+
+           </LinearLayout>
+
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:orientation="vertical"
+               android:layout_height="wrap_content"
+               android:background="@color/black"
+               android:padding="10dp"
+               android:layout_marginBottom="10dp"
+               android:layout_marginTop="20dp"
+               android:id="@+id/ConstraintLayId"
+               >
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:text="ConstraintLayout"
+                   android:textColor="@color/white"
+                   />
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:orientation="vertical"
+               android:layout_height="wrap_content"
+               android:background="@color/black"
+               android:padding="10dp"
+               android:layout_marginBottom="10dp"
                android:id="@+id/CheckboxId"
                >
 

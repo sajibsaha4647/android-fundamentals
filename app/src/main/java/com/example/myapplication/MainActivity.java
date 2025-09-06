@@ -22,8 +22,21 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textviewid);
         textView.setText("welcome");
 
+//        RelativeLayId
+//                ConstraintLayId
+
         binding.ButtonViewId.setOnClickListener(e->{
             Intent intent = new Intent(MainActivity.this, ButtonView.class);
+            startActivity(intent);
+        });
+
+
+        binding.RelativeLayId.setOnClickListener(e->{
+            Intent intent = new Intent(MainActivity.this, RelativelayoutCart.class);
+            startActivity(intent);
+        });
+        binding.ConstraintLayId.setOnClickListener(e->{
+            Intent intent = new Intent(MainActivity.this, ConstraintLayoutCart.class);
             startActivity(intent);
         });
 
