@@ -19,7 +19,7 @@ public class ConstraintLayoutCart extends AppCompatActivity {
         EdgeToEdge.enable(this);
         binding = ActivityConstraintLayoutCartBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -35,7 +35,7 @@ public class ConstraintLayoutCart extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Show back button
             getSupportActionBar().setDisplayShowHomeEnabled(true); // Make it clickable
-            getSupportActionBar().setTitle("EditText view"); // Set title
+            getSupportActionBar().setTitle("Constraint view"); // Set title
         }
     }
 
