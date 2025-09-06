@@ -1,6 +1,9 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.SeekBar;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +29,29 @@ public class SeekBarInfo extends AppCompatActivity {
             return insets;
         });
        setupActionBar();
+        setSeekbar();
+    }
+
+    private  void setSeekbar(){
+        binding.seekBarId.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Toast.makeText(seekBar.getContext(), "Progress: " + progress, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+                    Log.d("TAG", "Progress touch: " + seekBar);
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Log.d("TAG", "Progress stop: " + seekBar);
+            }
+        });
+
     }
 
      private void setupActionBar() {
