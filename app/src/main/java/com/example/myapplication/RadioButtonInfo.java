@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,9 +28,23 @@ public class RadioButtonInfo extends AppCompatActivity {
             return insets;
         });
        setupActionBar();
+        checkRadioOptions();
     }
 
-     private void setupActionBar() {
+    private void checkRadioOptions() {
+        binding.radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            RadioButton selectedRadio = group.findViewById(checkedId);
+            if (selectedRadio != null) {
+                String selectedText = selectedRadio.getText().toString();
+                Toast.makeText(this, "Selected: " + selectedText, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+
+
+    private void setupActionBar() {
         // Get the action bar
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Show back button

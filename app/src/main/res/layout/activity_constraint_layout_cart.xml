@@ -4,6 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ConstraintLayoutCart">
+
+    <!-- Bell icon -->
+    <ImageView
+        android:id="@+id/bellIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_launcher_foreground"
+        android:contentDescription="Bell Icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Badge (number or dot) -->
+    <TextView
+        android:id="@+id/notificationBadge"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/ic_launcher_background"
+    android:gravity="center"
+    android:text="5"
+    android:textColor="@android:color/white"
+    android:textSize="12sp"
+    app:layout_constraintEnd_toEndOf="@+id/bellIcon"
+    app:layout_constraintTop_toTopOf="@+id/bellIcon"
+    android:translationX="8dp"
+    android:translationY="-8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
