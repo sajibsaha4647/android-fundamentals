@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="android_fundamental">Android fundamental</string>
+    <string name="todo">TODO</string>
+    <string name="logininfo">LoginInfo</string>
+    <string name="edit_text_example">Edit Text Example</string>
 </resources>

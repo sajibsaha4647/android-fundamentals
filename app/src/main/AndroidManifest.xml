@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ImageButtonView"
+            android:exported="false" />
+        <activity
             android:name=".WeightSumInfo"
             android:exported="false" />
         <activity
@@ -73,10 +76,7 @@
             android:name=".EditTextView"
             android:exported="false" />
         <activity
-            android:name=".image_button_view"
-            android:exported="false" />
-        <activity
-            android:name=".buttonview"
+            android:name=".ButtonView"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
