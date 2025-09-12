@@ -1,6 +1,12 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,13 +26,50 @@ public class CustomToastInfo extends AppCompatActivity {
         EdgeToEdge.enable(this);
         binding = ActivityCustomToastInfoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
         setupActionBar();
+
+
+setPressOnToast();
+
     }
+
+
+   private void setPressOnToast() {
+    binding.pressCustomToastId.setOnClickListener(e -> {
+        showCustomToast();
+
+    });
+}
+
+private void showCustomToast() {
+    Log.d("tag","press");
+    LayoutInflater inflater = getLayoutInflater();
+    View layout = inflater.inflate(R.layout.custom_toast, null);
+
+    // Update text
+    TextView text = layout.findViewById(R.id.toastText);
+    text.setText("Custom toast message here!");
+
+    // Create toast
+    Toast toast = new Toast(this); // Activity context (not getApplicationContext())
+    toast.setDuration(Toast.LENGTH_LONG);
+    toast.setView(layout);
+
+    // Position: bottom, centered, 100px above bottom
+    toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 10);
+
+    toast.show();
+
+}
+
+
+
+
 
      private void setupActionBar() {
         // Get the action bar

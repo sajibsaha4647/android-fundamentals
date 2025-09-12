@@ -1,6 +1,9 @@
 package com.example.myapplication;
 
+import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.app.TimePickerDialog;
+import android.widget.TimePicker;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +29,32 @@ public class TimePickerInfo extends AppCompatActivity {
             return insets;
         });
         setupActionBar();
+        binding.pickTimeId.setOnClickListener(e->{
+            showTimePickerDialog();
+        });
     }
+
+
+   private void showTimePickerDialog() {
+    Calendar calendar = Calendar.getInstance();
+    int hour = calendar.get(Calendar.HOUR_OF_DAY);
+    int minute = calendar.get(Calendar.MINUTE);
+
+    TimePickerDialog timePickerDialog = new TimePickerDialog(
+            this,
+            (view, selectedHour, selectedMinute) -> {
+                binding.setTimeId.setText(
+                        String.format("%02d:%02d", selectedHour, selectedMinute)
+                );
+            },
+            hour,
+            minute,
+            true // true = 24-hour format
+    );
+
+    timePickerDialog.show();
+}
+
 
      private void setupActionBar() {
         // Get the action bar

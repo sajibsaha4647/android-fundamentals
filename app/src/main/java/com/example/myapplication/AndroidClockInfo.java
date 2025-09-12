@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +28,26 @@ public class AndroidClockInfo extends AppCompatActivity {
             return insets;
         });
        setupActionBar();
+       showTimePicker();
     }
+
+
+    private void showTimePicker() {
+    Calendar calendar = Calendar.getInstance();
+    int hour = calendar.get(Calendar.HOUR_OF_DAY);
+    int minute = calendar.get(Calendar.MINUTE);
+
+//    TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+//        (view, selectedHour, selectedMinute) -> {
+//            String time = String.format(Locale.getDefault(), "%02d:%02d", selectedHour, selectedMinute);
+//            Toast.makeText(this, "Selected time: " + time, Toast.LENGTH_SHORT).show();
+//        }, hour, minute, true); // true for 24-hour format
+
+
+}
+
+
+
 
      private void setupActionBar() {
         // Get the action bar

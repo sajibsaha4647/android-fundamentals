@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,13 @@ public class ToastInfo extends AppCompatActivity {
             return insets;
         });
        setupActionBar();
+       setToastToShow();
+    }
+
+    void setToastToShow(){
+        binding.toastIdPress.setOnClickListener(e->{
+            Toast.makeText(this, "here press", Toast.LENGTH_LONG).show();
+        });
     }
 
      private void setupActionBar() {

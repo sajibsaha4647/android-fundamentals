@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.DatePickerDialogId.setOnClickListener(e->{
-            Intent intent = new Intent(MainActivity.this, DatePickerDialog.class);
+            Intent intent = new Intent(MainActivity.this, DatePickerDialogInfo.class);
             startActivity(intent);
         });
 

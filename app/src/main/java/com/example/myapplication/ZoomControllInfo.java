@@ -1,6 +1,9 @@
 package com.example.myapplication;
 
+import android.graphics.Matrix;
 import android.os.Bundle;
+import android.view.ScaleGestureDetector;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +30,32 @@ public class ZoomControllInfo extends AppCompatActivity {
             return insets;
         });
        setupActionBar();
+
+
+       ImageView imageView = binding.imageView;
+Matrix matrix = new Matrix();
+imageView.setImageMatrix(matrix);
+
+ScaleGestureDetector scaleGestureDetector = new ScaleGestureDetector(this,
+    new ScaleGestureDetector.SimpleOnScaleGestureListener() {
+        float scaleFactor = 1f;
+
+        @Override
+        public boolean onScale(ScaleGestureDetector detector) {
+            scaleFactor *= detector.getScaleFactor();
+            scaleFactor = Math.max(1f, Math.min(scaleFactor, 5f));
+            matrix.setScale(scaleFactor, scaleFactor);
+            imageView.setImageMatrix(matrix);
+            return true;
+        }
+    });
+
+imageView.setOnTouchListener((v, event) -> {
+    scaleGestureDetector.onTouchEvent(event);
+    return true;
+});
+
+
     }
 
      private void setupActionBar() {
